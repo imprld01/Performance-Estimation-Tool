@@ -113,22 +113,6 @@ function pushbutton8_Callback(hObject, eventdata, handles)
     % hObject    handle to pushbutton8 (see GCBO)
     % eventdata  reserved - to be defined in a future version of MATLAB
     % handles    structure with handles and user data (see GUIDATA)
-    
-    troubleID = handles.troubleID;
-    limit = size(troubleID);
-    if handles.idx <= findImagesIndex(handles.imgs, troubleID(1))
-        warndlg('No Previous Trouble Frame Available!','Warning');
-    else
-        for index = limit(2) : -1 : 1
-            idx = findImagesIndex(handles.imgs, troubleID(index));
-            if idx < handles.idx
-                handles.idx = idx;
-                guidata(hObject, handles);
-                showImageMarks(handles);
-                break;
-            end
-        end
-    end
 end
 
 
@@ -138,22 +122,6 @@ function pushbutton9_Callback(hObject, eventdata, handles)
     % hObject    handle to pushbutton9 (see GCBO)
     % eventdata  reserved - to be defined in a future version of MATLAB
     % handles    structure with handles and user data (see GUIDATA)
-    
-    troubleID = handles.troubleID;
-    limit = size(troubleID);
-    if handles.idx >= findImagesIndex(handles.imgs, troubleID(limit(2)))
-        warndlg('No Next Trouble Frame Available!','Warning');
-    else
-        for index = 1 : limit(2)
-            idx = findImagesIndex(handles.imgs, troubleID(index));
-            if idx > handles.idx
-                handles.idx = idx;
-                guidata(hObject, handles);
-                showImageMarks(handles);
-                break;
-            end
-        end
-    end
 end
 
 
