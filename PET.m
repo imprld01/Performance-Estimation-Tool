@@ -55,6 +55,13 @@ function PET_OpeningFcn(hObject, eventdata, handles, varargin)
 
     % Choose default command line output for PET
     handles.output = hObject;
+
+    % Customized Global Variables
+    handles.idx = 0;        % current index
+    handles.imgs = {};      % image path list
+    handles.gt = {};        % ground truth
+    handles.do = {};        % detected object
+    handles.troubleID = []; % trouble frame name list
     
     % Update handles structure
     guidata(hObject, handles);
