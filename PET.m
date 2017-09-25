@@ -471,8 +471,8 @@ function troubles = calTroubles(handles)
         
         % unpair part
         limit = size(standardIndex);
-        for indx = 1 : limit
-            if standardIndex(1)
+        for indx = 1 : limit(2)
+            if standardIndex(indx)
                 troubles = [troubles, base];
             end
         end
@@ -587,20 +587,20 @@ function output = calPerformance(handles)
 
         % unpair part
         limit = size(standardIndex);
-        for indx = 1 : limit
-            if standardIndex(1)
-                if fix(standardIndex(1)) <= length(gt_row_idxs)
+        for indx = 1 : limit(2)
+            if standardIndex(indx)
+                if fix(standardIndex(indx)) <= length(gt_row_idxs)
                     % save unpair at A
-                    unpairs_gt{indx, 1} = A{[A{:,1}] == standardIndex(1), 2};
-                    unpairs_gt{indx, 2} = A{[A{:,1}] == standardIndex(1), 3};
-                    unpairs_gt{indx, 3} = A{[A{:,1}] == standardIndex(1), 4};
-                    unpairs_gt{indx, 4} = A{[A{:,1}] == standardIndex(1), 5};
+                    unpairs_gt{indx, 1} = A{[A{:,1}] == standardIndex(indx), 2};
+                    unpairs_gt{indx, 2} = A{[A{:,1}] == standardIndex(indx), 3};
+                    unpairs_gt{indx, 3} = A{[A{:,1}] == standardIndex(indx), 4};
+                    unpairs_gt{indx, 4} = A{[A{:,1}] == standardIndex(indx), 5};
                 else
                     % save unpair at B
-                    unpairs_do{indx, 1} = B{[B{:,1}] == standardIndex(1), 2};
-                    unpairs_do{indx, 2} = B{[B{:,1}] == standardIndex(1), 3};
-                    unpairs_do{indx, 3} = B{[B{:,1}] == standardIndex(1), 4};
-                    unpairs_do{indx, 4} = B{[B{:,1}] == standardIndex(1), 5};
+                    unpairs_do{indx, 1} = B{[B{:,1}] == standardIndex(indx), 2};
+                    unpairs_do{indx, 2} = B{[B{:,1}] == standardIndex(indx), 3};
+                    unpairs_do{indx, 3} = B{[B{:,1}] == standardIndex(indx), 4};
+                    unpairs_do{indx, 4} = B{[B{:,1}] == standardIndex(indx), 5};
                 end
             end
         end
