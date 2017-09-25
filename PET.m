@@ -22,7 +22,7 @@ function varargout = PET(varargin)
 
     % Edit the above text to modify the response to help PET
 
-    % Last Modified by GUIDE v2.5 21-Sep-2017 12:31:45
+    % Last Modified by GUIDE v2.5 25-Sep-2017 21:45:51
 
     % Begin initialization code - DO NOT EDIT
     gui_Singleton = 1;
@@ -337,6 +337,9 @@ function showImageMarks(handles)
                 showTroubleRectDO(udo(idx, 1:4));
             end
         end
+        
+        % show ration list
+        set(handles.text20, 'String', pairs(:,9));
     end
     
     % show filename
